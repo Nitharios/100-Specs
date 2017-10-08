@@ -130,7 +130,14 @@ let domains = {
  *   Konqueror  => "konqueror.org"
  *
  */
-
+let browsers = {
+  Chromium : "google.com",
+  Safari : "apple.com",
+  Opera : "opera.com",
+  Firefox : "mozilla.org",
+  Sleipnir : "fenrir-inc.com",
+  Konqueror : "konqueror.org",
+};
 
 /* Step 13
  *
@@ -148,7 +155,18 @@ let domains = {
  *  isDouble  => true
  *
  */
-
+let rainbow = {
+  isDouble : true
+};
+rainbow.colors = {
+  red : '#F0280A',
+  orange : '#FF8800',
+  yellow : '#FFDD00',
+  green : '#51AB0C',
+  blue : '#1593ED',
+  indigo : '#5215ED',
+  violet : '#A915ED'
+};
 
 /* Step 14
  *
@@ -163,7 +181,7 @@ let domains = {
  * "Bieber Linux"
  *
  */
-
+let linuxFlavors = ["Gentoo", "Fedora", "Debian", "Slackware", "Red Hat", "Bieber Linux"];
 
 /* Step 15
  *
@@ -177,7 +195,7 @@ let domains = {
  * "cytosine"
  *
  */
-
+let DNA = ["nucleatides", 'guanine', 'adenine', 'thymine', 'cytosine'];
 
 /* Step 16
  *
@@ -190,7 +208,12 @@ let domains = {
  * Surface      => 320
  *
  */
-
+let laptopCosts = {
+  MacBook : 1500,
+  Alienware : 2500,
+  HP : 499,
+  Surface : 320
+};
 
 /* Step 17
  *
@@ -206,7 +229,7 @@ let domains = {
  * "Species"
  *
  */
-
+let livingOrganismClassification = ["Kingdom", "Phylum", 'Class', 'Order', 'Family', 'Genus', 'Species'];
 
 /* Step 18
  *
@@ -220,7 +243,7 @@ let domains = {
  * "cvs"
  *
  */
-
+let scmList = ["git", 'svn', 'mercurial', 'bazaar', 'cvs'];
 
 /* Step 19
  *
@@ -239,7 +262,14 @@ let domains = {
  *                  "Golden"
  *
  */
-
+let beers = {
+  IPA : 'Ale',
+  Lager : 'Strong',
+  Heffeweisen : 'German',
+  Stout : ['Thick', 'Dark'],
+  Porter : "Bitter",
+  Ale : ["Light", "Golden"]
+};
 
 /* Step 20
  *
@@ -249,7 +279,9 @@ let domains = {
  * @return {String}
  *
  */
-
+function sahara_river() {
+  return 'Nile River';
+}
 
 /* Step 21
  *
@@ -261,7 +293,9 @@ let domains = {
  * @return {Number}
  *
  */
-
+function addNumbers(one, two) {
+  return one+two;
+}
 
 /* Step 22
  *
@@ -274,7 +308,12 @@ let domains = {
  * @return {Bool}
  *
  */
-
+function installLinux(type) {
+  for (let i = 0; i < linuxFlavors.length; i++) {
+    if (type === linuxFlavors[i]) return true;
+  }
+  return false;
+}
 
 /* Step 23
  *
@@ -293,7 +332,13 @@ let domains = {
  * @return {Bool when False, String when True}
  *
  */
-
+function drink(beer) {
+  if (beers.hasOwnProperty(beer)) {
+    if (beers[beer].constructor === Array) return `This ${beer} is ${beers[beer][0]} and ${beers[beer][1]}.`;
+    else return `This ${beer} is ${beers[beer]}.`;
+  }
+  return false;
+}
 
 /* Step 24
  *
@@ -306,7 +351,10 @@ let domains = {
  * @return {String if true else return false}
  *
  */
-
+function browseURL(browser) {
+  if (browsers.hasOwnProperty(browser)) return `${browsers[browser]}`;
+  else return false;
+}
 
 /* Step 25
  *
@@ -317,7 +365,15 @@ let domains = {
  * @return {String}
  *
  */
+function listLivingOrgClass() {
+  let li = ``;
 
+  for (let i = 0; i < livingOrganismClassification.length; i++) {
+    li += `<li>${livingOrganismClassification[i]}</li>`;
+  }
+
+  return `<ul>${li}</ul>`;
+}
 
 /* Step 26
  *
